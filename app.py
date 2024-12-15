@@ -13,8 +13,8 @@ from PIL import Image
 
 
 app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = os.getenv("SECRET_KEY", "defaultsecretkey")
 db = SQLAlchemy(app)
@@ -767,5 +767,5 @@ def uploaded_file(filename):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    # app.run(host='0.0.0.0', port=5000)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
+    # app.run(debug=True)
