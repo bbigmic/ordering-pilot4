@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = os.getenv("SECRET_KEY", "defaultsecretkey")
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-app.config['UPLOAD_FOLDER'] = '/var/data/images'
+app.config['UPLOAD_FOLDER'] = '/war/da'
 
 
 # Funkcja pomocnicza do generowania QR kodów
